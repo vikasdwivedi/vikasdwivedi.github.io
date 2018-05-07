@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Test for Image map</title>
+    <!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
 </head>
 <body>
     <script type='text/javascript' src='./js/image.map.resizer.min.js'></script>
@@ -14,13 +16,42 @@
     height: auto;
 }
     </style>
-    <img id="Image-Maps-Com-image-maps-2018-05-07-043436" class="responsive" src="./img/test.jpg" border="0" width="1152" height="648" orgWidth="1152" orgHeight="648" usemap="#image-maps-2018-05-07-043436" alt="" />
-    <map name="image-maps-2018-05-07-043436" id="ImageMapsCom-image-maps-2018-05-07-043436">
-    <area id="bigarea" alt="" title="bigrect" href="http://www.image-maps.com/" shape="rect" coords="134,166,459,374"  style="outline:none;" target="_self"     />
-    <area id="smallarea" alt="" title="smallrect" href="http://www.image-maps.com/" shape="rect" coords="656,223,878,347"  style="outline:none;" target="_self"   />
+<div style="position: relative;left: 100px;">
+<!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/vikdwi/image-map-resizer" data-icon="octicon-star" data-size="large" aria-label="Star vikdwi/image-map-resizer on GitHub">Star</a>
+<!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/vikdwi/image-map-resizer/fork" data-icon="octicon-repo-forked" data-size="large" aria-label="Fork vikdwi/image-map-resizer on GitHub">Fork</a>
+</div>
+    <img id="rectimg" class="responsive" src="./img/test.jpg" border="0" width="1152" height="648" orgWidth="1152" orgHeight="648" usemap="#image-maps-1" alt="" />
+    <map name="image-maps-1" id="ImageMapsCom-image-maps-2018-05-07-043436">
+    <area id="bigarea" alt="" title="bigrect" shape="rect" coords="134,166,459,374"  style="outline:none;" target="_self"     />
+    <area id="smallarea" alt="" title="smallrect"  shape="rect" coords="656,223,878,347"  style="outline:none;" target="_self"   />
     </map>
+    <div style = "text-align:center; font-size: 30px">
+        <p>Resize the page and click on the rectangle to see the action.</p> <br/>
+        <h2 style="text-align:center;"><label id="action"></label></h2>
+    </div>
+   
     <script>
-          window.dispatchEvent(new Event('resize'));
+        window.dispatchEvent(new Event('resize'));
+
+        document.querySelector("#bigarea").addEventListener('click', function (e) { 
+         (document.getElementById('action')).innerText =  'You clicked Big Rectangle';
+         (document.getElementById('action')).style.color = getRandomColor();
+         });
+        document.querySelector("#smallarea").addEventListener('click', function (e) { 
+         (document.getElementById('action')).innerText =  'You clicked Small Rectangle';
+         (document.getElementById('action')).style.color = getRandomColor();
+        });
+
+        function getRandomColor() {
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
     </script>
 </body>
 </html>
