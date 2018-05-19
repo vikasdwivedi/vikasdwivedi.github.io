@@ -22,15 +22,15 @@
 <!-- Place this tag where you want the button to render. -->
 <a class="github-button" href="https://github.com/vikdwi/image-map-resizer/fork" data-icon="octicon-repo-forked" data-size="large" aria-label="Fork vikdwi/image-map-resizer on GitHub">Fork</a>
 </div>
+    <div style = "text-align:center; font-size: 30px">
+        <p>Resize the page and click on the rectangle to see the action.</p> <br/>
+        <h2 style="text-align:center;"><label id="action"></label></h2>
+    </div>
     <img id="rectimg" class="responsive" src="./img/test.jpg" border="0" width="1152" height="648" orgWidth="1152" orgHeight="648" usemap="#image-maps-1" alt="" />
     <map name="image-maps-1" id="ImageMapsCom-image-maps-2018-05-07-043436">
     <area id="bigarea" alt="" title="bigrect" shape="rect" coords="134,166,459,374"  style="outline:none;" target="_self"     />
     <area id="smallarea" alt="" title="smallrect"  shape="rect" coords="656,223,878,347"  style="outline:none;" target="_self"   />
     </map>
-    <div style = "text-align:center; font-size: 30px">
-        <p>Resize the page and click on the rectangle to see the action.</p> <br/>
-        <h2 style="text-align:center;"><label id="action"></label></h2>
-    </div>
    
     <script>
         window.dispatchEvent(new Event('resize'));
